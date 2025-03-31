@@ -27,6 +27,8 @@ public class AspectsOfMinecraft
 
         ModEntities.register(modEventBus);
 
+
+
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
 

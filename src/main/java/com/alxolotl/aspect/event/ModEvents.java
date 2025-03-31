@@ -11,7 +11,8 @@ import net.minecraftforge.fml.common.Mod;
 public class ModEvents {
 
     @SubscribeEvent
-    public static void registerAttributes (EntityAttributeCreationEvent event){event.put(ModEntities.MAMMOTITAN.get(), MammotitanEntity.createAttributes().build());
+    public static void registerAttributes (EntityAttributeCreationEvent event){event.put(ModEntities.MAMMOTITAN.get()
+            , MammotitanEntity.createAttributes().build());
 
     }
 

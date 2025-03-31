@@ -218,6 +218,7 @@ public class MammotitanModel<T extends MammotitanEntity> extends HierarchicalMod
 	public void setupAnim(MammotitanEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
 	this.root().getAllParts().forEach(ModelPart::resetPose);
+
 		this.animateWalk(MammotitanAnimationsDefinitions.MAMMOTITAN_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
 		this.animate(entity.idleAnimationState, MammotitanAnimationsDefinitions.MAMMOTITAN_IDLE,ageInTicks, 1.0f);
 

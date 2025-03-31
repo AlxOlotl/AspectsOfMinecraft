@@ -1,5 +1,6 @@
 package com.alxolotl.aspect.entity.custom;
 
+import com.alxolotl.aspect.entity.ModEntities;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.AnimationState;
@@ -8,6 +9,7 @@ import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -40,13 +42,16 @@ public class MammotitanEntity extends Animal {
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 4f));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+
     }
 
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent)
     {
-        return null;
+        return ModEntities.MAMMOTITAN.get().create(pLevel);
+
     }
 
     private void setupAnimationStates() {
