@@ -46,6 +46,7 @@ public class MammotitanEntity extends Animal {
 
     }
 
+
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent)
